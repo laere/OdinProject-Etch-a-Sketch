@@ -14,9 +14,16 @@ function grid(n) {
     }
 
     for (let i = 0; i < n; i++) {
-        let box = document.createElement("div")
-        box.className = "box"
-        container.appendChild(box);
+
+        let boxContainer = document.createElement("div");
+        container.appendChild(boxContainer)
+
+        for (let j = 0; j < n; j++) {
+            
+            let box = document.createElement("div")
+            box.className = "box"
+            boxContainer.appendChild(box);
+        }
     }
 
 }
