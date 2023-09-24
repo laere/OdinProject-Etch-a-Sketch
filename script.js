@@ -23,13 +23,16 @@ function sketch() {
                 
             }
         }
+
         let boxes = document.querySelectorAll(".box")
         console.log(boxes);
 
+        mouseOverEffect(boxes);
+    }
 
-
-        boxes.forEach(box => {
-            box.addEventListener("mouseover", e => {
+    function mouseOverEffect(nodelist) {
+        nodelist.forEach(node => {
+            node.addEventListener("mouseover", e => {
                 e.target.classList.add("background");
             })
         })
@@ -47,11 +50,7 @@ function sketch() {
         })
     }
 
-    // boxes.forEach(box => {
-    //     box.addEventListener("click", e => {
-    //         console.log(e.target);
-    //     })
-    // })
+
 
     startSketch();
     

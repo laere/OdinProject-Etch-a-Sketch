@@ -9,7 +9,6 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 800px;
   }
 
   #sketch-container {
@@ -18,20 +17,27 @@ html {
   }
 
   .box {
-    width: 12px;
-    height: 12px;
-    border: 1px solid red;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(204, 203, 203, 0.425);
    
   }
 
   button {
     padding: 16px;
-    background-color: white;
-    border: 1px solid green;
-    color: green;
+    background-color: green;
+    border: 1px solid white;
+    color: white;
     width: 10%;
-    margin-bottom: 20px;
+    margin: 20px 0;
   }
+
+  button:hover {
+    background-color: white;
+    color: green;
+    border: 1px solid green;
+  }
+
 
 .background {
   background-color: black;
