@@ -2,10 +2,15 @@ function sketch() {
     //Add a button to the top of the screen
     //When clicked it will prompt the user for the # of sides for the new grid (100x100)
     
+    //Instead of using queryselectorAll to create a nodelist
+    //could we make an empty array and add each element to that array
+    //making a seperate function that renders the array vs having one function doing both?
+
+
 
     function grid(n) {
         let container = document.getElementById("sketch-container");
-    
+
         if (n > 100 || n === 0 || n === NaN) {
             return;
         }
@@ -14,6 +19,7 @@ function sketch() {
 
             let boxContainer = document.createElement("div");
             container.appendChild(boxContainer)
+            arr.push(boxContainer);
 
             for (let j = 0; j < n; j++) {
 
@@ -25,8 +31,7 @@ function sketch() {
         }
 
         let boxes = document.querySelectorAll(".box")
-        console.log(boxes);
-
+        // console.log(boxes);
         mouseOverEffect(boxes);
     }
 
@@ -44,6 +49,7 @@ function sketch() {
 
     function startSketch() {
         let button = document.getElementById("new-sketch-btn");
+
         button.addEventListener("click", e => {
             let number = userInput();
             grid(number);
