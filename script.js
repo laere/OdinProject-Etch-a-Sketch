@@ -5,11 +5,13 @@ function sketch() {
     //Instead of using queryselectorAll to create a nodelist
     //could we make an empty array and add each element to that array
     //making a seperate function that renders the array vs having one function doing both?
-
+    let button = document.getElementById("new-sketch-btn");
+    let mainContainer = document.getElementById("main-container");
+    let sketchContainer = document.getElementById("sketch-container");
+  
 
 
     function grid(n) {
-        let container = document.getElementById("sketch-container");
 
         if (n > 100 || n === 0 || n === NaN) {
             return;
@@ -18,8 +20,7 @@ function sketch() {
         for (let i = 0; i < n; i++) {
 
             let boxContainer = document.createElement("div");
-            container.appendChild(boxContainer)
-            arr.push(boxContainer);
+            sketchContainer.appendChild(boxContainer);
 
             for (let j = 0; j < n; j++) {
 
@@ -43,22 +44,31 @@ function sketch() {
         })
     }
 
+    function startSketch() {
+        let userNumber = userInput();
+        grid(userNumber);
+    }
+
+    function resetSketch() {
+        // mainContainer.removeChild(sketchContainer);
+        console.log("test")
+    }
+
     function userInput() {
         return parseInt(prompt("Choose the number of sides you want your sketch to be (max: 100"));
     }
 
-    function startSketch() {
-        let button = document.getElementById("new-sketch-btn");
 
-        button.addEventListener("click", e => {
-            let number = userInput();
-            grid(number);
-        })
-    }
+    button.addEventListener("click", e => {
+        // debugger;
+        if (sketchContainer.hasChildNodes()) {
+            // now we remove child nodes
+            sketchContainer.textContent = "";
+        }
 
+        startSketch();
+    })
 
-
-    startSketch();
     
 }
 
