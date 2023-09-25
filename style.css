@@ -19,7 +19,7 @@ html {
   .box {
     width: 16px;
     height: 16px;
-    border: 1px solid rgba(204, 203, 203, 0.425);
+    background-color: black;
    
   }
 
@@ -40,5 +40,5 @@ html {
 
 
 .background {
-  background-color: black;
+  background-color: white;
 }
